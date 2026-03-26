@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# Java build artifacts
+**/*.class
+**/bin/
+**/out/
+**/target/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# IDE/editor metadata
+.vscode/
+.idea/
+*.iml
+.classpath
+.project
+.settings/

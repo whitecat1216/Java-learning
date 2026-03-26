@@ -1,0 +1,5 @@
+* text=auto eol=lf
+
+# Keep Java source and markdown as text
+*.java text
+*.md text

@@ -1,0 +1,10 @@
+public class App {
+    public static void main(String[] args)  {
+        // 数値の表示
+        System.out.print(123);
+        System.out.println(456);
+        // 文字の表示
+        System.out.print("ABC");
+        System.out.println("DEF");
+    }
+}
