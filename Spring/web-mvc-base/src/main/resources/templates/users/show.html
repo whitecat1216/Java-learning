@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello Spring Boot 3.0</title>
+</head>
+
+<body>
+  <form th:object="${userForm}">                                <!-- form 内でuserFormを参照 -->
+    <div>
+      <label for="username">username</label>
+      <input type="text" th:field="*{username}" readonly />     <!-- formUser.username をマッピング -->
+    </div>
+
+    <div>
+      <label for="password">password</label>
+      <input type="text" th:field="*{password}" readonly />     <!-- formUser.password をマッピング -->
+    </div>
+
+    <div>
+      <label th:for="enabled">enabled</label>
+      <input type="text" th:field="*{enabled}" readonly />      <!-- formUser.enabled をマッピング -->
+    </div>
+  </form>
+
+  <a href="/users">index</a> |
+  <a th:href="@{/users/{id}/edit(id=${userForm.id})}">edit</a>  <!-- /users/ID/edit にリンク -->
+</body>
+
+</html>

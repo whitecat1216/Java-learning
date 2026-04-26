@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello Spring Boot 3.0</title>
+</head>
+
+<body>
+  <form action="/users/create" method="post" th:object="${userForm}"> <!-- /users/ID/create に post。form 内でuserFormを参照 -->
+    <div>
+      <label for="username">username</label>
+      <input type="text" th:field="*{username}" />                    <!-- formUser.username をマッピング -->
+    </div>
+
+    <div>
+      <label for="password">password</label>
+      <input type="text" th:field="*{password}" />                    <!-- formUser.password をマッピング -->
+    </div>
+
+    <div>
+      <label th:for="${#ids.next('enabled')}">enabled</label>         <!-- チェックボックスは id が変化してしまうため #ids で調整 -->
+      <input type="checkbox" th:field="*{enabled}" />                 <!-- formUser.enabled をマッピング -->
+    </div>
+
+    <a href="/users">index</a> |
+    <button type="submit">create</button>
+  </form>
+</body>
+
+</html>
